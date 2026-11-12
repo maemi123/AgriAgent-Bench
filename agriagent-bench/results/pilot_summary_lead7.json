@@ -1,0 +1,132 @@
+{
+  "naive": {
+    "n_runs": 27,
+    "yield_kg_mu": 293.96,
+    "net_profit": 203.69,
+    "cost": 590.0,
+    "violations": 0,
+    "pest_peak": 0.55,
+    "score_yield": 9.19,
+    "score_profit": 19.1,
+    "score_rule": 15.0,
+    "score_process": 7.56,
+    "score_total": 50.84,
+    "action_dist": {
+      "harvest": 0.006,
+      "wait": 0.994
+    },
+    "per_run": {
+      "irrigate": 0.0,
+      "fertilize": 0.0,
+      "spray": 0.0,
+      "observe": 0.0
+    }
+  },
+  "random": {
+    "n_runs": 27,
+    "yield_kg_mu": 579.32,
+    "net_profit": -1000.99,
+    "cost": 2565.17,
+    "violations": 3.26,
+    "pest_peak": 0.09,
+    "score_yield": 18.1,
+    "score_profit": 0.0,
+    "score_rule": 3.41,
+    "score_process": 14.22,
+    "score_total": 35.73,
+    "action_dist": {
+      "fertilize": 0.143,
+      "harvest": 0.006,
+      "irrigate": 0.192,
+      "observe": 0.112,
+      "spray": 0.15,
+      "wait": 0.397
+    },
+    "per_run": {
+      "irrigate": 32.0,
+      "fertilize": 23.9,
+      "spray": 25.1,
+      "observe": 18.7
+    }
+  },
+  "rule": {
+    "n_runs": 27,
+    "yield_kg_mu": 493.63,
+    "net_profit": 355.07,
+    "cost": 977.76,
+    "violations": 0,
+    "pest_peak": 0.13,
+    "score_yield": 15.42,
+    "score_profit": 33.29,
+    "score_rule": 15.0,
+    "score_process": 15.11,
+    "score_total": 78.82,
+    "action_dist": {
+      "fertilize": 0.017,
+      "harvest": 0.006,
+      "irrigate": 0.068,
+      "observe": 0.084,
+      "spray": 0.018,
+      "wait": 0.807
+    },
+    "per_run": {
+      "irrigate": 11.8,
+      "fertilize": 3.0,
+      "spray": 3.1,
+      "observe": 14.6
+    }
+  },
+  "rule_forecast": {
+    "n_runs": 27,
+    "yield_kg_mu": 488.4,
+    "net_profit": 375.03,
+    "cost": 943.66,
+    "violations": 0,
+    "pest_peak": 0.13,
+    "score_yield": 15.26,
+    "score_profit": 35.16,
+    "score_rule": 15.0,
+    "score_process": 14.67,
+    "score_total": 80.09,
+    "action_dist": {
+      "fertilize": 0.017,
+      "harvest": 0.006,
+      "irrigate": 0.047,
+      "observe": 0.084,
+      "spray": 0.018,
+      "wait": 0.828
+    },
+    "per_run": {
+      "irrigate": 8.1,
+      "fertilize": 3.0,
+      "spray": 3.1,
+      "observe": 14.6
+    }
+  },
+  "oracle": {
+    "n_runs": 27,
+    "yield_kg_mu": 551.69,
+    "net_profit": 507.34,
+    "cost": 982.21,
+    "violations": 0,
+    "pest_peak": 0.17,
+    "score_yield": 17.24,
+    "score_profit": 44.67,
+    "score_rule": 15.0,
+    "score_process": 18.22,
+    "score_total": 95.13,
+    "action_dist": {
+      "fertilize": 0.042,
+      "harvest": 0.006,
+      "irrigate": 0.09,
+      "spray": 0.016,
+      "wait": 0.847
+    },
+    "per_run": {
+      "irrigate": 15.2,
+      "fertilize": 7.1,
+      "spray": 2.7,
+      "observe": 0.0
+    }
+  }
+}

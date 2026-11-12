@@ -1,0 +1,103 @@
+{
+  "model": "deepseek-flash",
+  "forecast_days": 7,
+  "n_runs": 9,
+  "sites": [
+    "hangzhou_yuhang",
+    "huzhou_nanxun",
+    "jiaxing_tongxiang"
+  ],
+  "years": [
+    2024,
+    2025,
+    2026
+  ],
+  "yield_kg_mu": 444.52,
+  "net_profit": 394.12,
+  "cost": 806.06,
+  "violations": 1.22,
+  "pest_peak": 0.35,
+  "score_profit": 36.95,
+  "score_yield": 13.89,
+  "score_rule": 10.11,
+  "score_process": 12.89,
+  "score_total": 73.84,
+  "score_std": 4.21,
+  "score_min": 67.5,
+  "score_max": 79.9,
+  "action_dist": {},
+  "per_run": [
+    {
+      "site": "huzhou_nanxun",
+      "year": 2024,
+      "seed": 0,
+      "total": 67.51,
+      "yield": 430.6,
+      "net": 331.3
+    },
+    {
+      "site": "jiaxing_tongxiang",
+      "year": 2024,
+      "seed": 0,
+      "total": 73.61,
+      "yield": 441.1,
+      "net": 392.8
+    },
+    {
+      "site": "hangzhou_yuhang",
+      "year": 2024,
+      "seed": 0,
+      "total": 68.91,
+      "yield": 455.4,
+      "net": 380.5
+    },
+    {
+      "site": "huzhou_nanxun",
+      "year": 2025,
+      "seed": 0,
+      "total": 70.3,
+      "yield": 430.1,
+      "net": 361.1
+    },
+    {
+      "site": "jiaxing_tongxiang",
+      "year": 2025,
+      "seed": 0,
+      "total": 79.88,
+      "yield": 471.1,
+      "net": 449.7
+    },
+    {
+      "site": "hangzhou_yuhang",
+      "year": 2025,
+      "seed": 0,
+      "total": 79.6,
+      "yield": 436.2,
+      "net": 415.7
+    },
+    {
+      "site": "huzhou_nanxun",
+      "year": 2026,
+      "seed": 0,
+      "total": 75.75,
+      "yield": 443.7,
+      "net": 414.7
+    },
+    {
+      "site": "jiaxing_tongxiang",
+      "year": 2026,
+      "seed": 0,
+      "total": 76.57,
+      "yield": 447.1,
+      "net": 422.4
+    },
+    {
+      "site": "hangzhou_yuhang",
+      "year": 2026,
+      "seed": 0,
+      "total": 72.44,
+      "yield": 445.4,
+      "net": 378.9
+    }
+  ]
+}

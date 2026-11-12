@@ -1,0 +1,8 @@
+# 运行时依赖：无。
+# 环境、基线、评测、数据抓取全部仅使用 Python 3.9+ 标准库
+# （argparse / json / random / statistics / urllib / multiprocessing / zipfile）。
+#
+# 仅当需要重新生成答辩 PPT 与预览时才用到下列第三方包：
+# qrcode==7.4.2      # 生成仓库二维码
+# pillow>=10.0       # 二维码出图
+# playwright>=1.40   # 预览截图（可选）

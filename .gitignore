@@ -1,0 +1,29 @@
+# ---- 内部工具与会话数据（不随项目发布）----
+.workbuddy/
+.slidep/
+.swc-cache/
+.wbapp_*
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- 密钥与本地配置（务必不要提交）----
+.env
+.env.*
+*.key
+secrets.*
+api_key*
+
+# ---- 临时与备份 ----
+*.tmp
+*.bak
+*.log
+
+# ---- 系统文件 ----
+.DS_Store
+Thumbs.db
+desktop.ini

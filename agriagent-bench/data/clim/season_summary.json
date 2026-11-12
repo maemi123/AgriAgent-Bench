@@ -1,0 +1,212 @@
+[
+  {
+    "site": "huzhou_nanxun",
+    "year": 2016,
+    "rain_mm": 1271,
+    "et0_mm": 623,
+    "tmean": 25.1
+  },
+  {
+    "site": "huzhou_nanxun",
+    "year": 2017,
+    "rain_mm": 840,
+    "et0_mm": 656,
+    "tmean": 24.9
+  },
+  {
+    "site": "huzhou_nanxun",
+    "year": 2018,
+    "rain_mm": 658,
+    "et0_mm": 709,
+    "tmean": 25.3
+  },
+  {
+    "site": "huzhou_nanxun",
+    "year": 2019,
+    "rain_mm": 960,
+    "et0_mm": 686,
+    "tmean": 24.5
+  },
+  {
+    "site": "huzhou_nanxun",
+    "year": 2020,
+    "rain_mm": 1260,
+    "et0_mm": 620,
+    "tmean": 24.9
+  },
+  {
+    "site": "huzhou_nanxun",
+    "year": 2021,
+    "rain_mm": 1602,
+    "et0_mm": 651,
+    "tmean": 25.4
+  },
+  {
+    "site": "huzhou_nanxun",
+    "year": 2022,
+    "rain_mm": 511,
+    "et0_mm": 727,
+    "tmean": 25.4
+  },
+  {
+    "site": "huzhou_nanxun",
+    "year": 2023,
+    "rain_mm": 1060,
+    "et0_mm": 631,
+    "tmean": 25.4
+  },
+  {
+    "site": "huzhou_nanxun",
+    "year": 2024,
+    "rain_mm": 1272,
+    "et0_mm": 704,
+    "tmean": 26.1
+  },
+  {
+    "site": "huzhou_nanxun",
+    "year": 2025,
+    "rain_mm": 1119,
+    "et0_mm": 720,
+    "tmean": 26.6
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2016,
+    "rain_mm": 1138,
+    "et0_mm": 655,
+    "tmean": 25.3
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2017,
+    "rain_mm": 866,
+    "et0_mm": 701,
+    "tmean": 25.2
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2018,
+    "rain_mm": 609,
+    "et0_mm": 730,
+    "tmean": 25.5
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2019,
+    "rain_mm": 958,
+    "et0_mm": 702,
+    "tmean": 24.5
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2020,
+    "rain_mm": 1293,
+    "et0_mm": 645,
+    "tmean": 25.0
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2021,
+    "rain_mm": 1474,
+    "et0_mm": 672,
+    "tmean": 25.6
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2022,
+    "rain_mm": 617,
+    "et0_mm": 754,
+    "tmean": 25.5
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2023,
+    "rain_mm": 1032,
+    "et0_mm": 658,
+    "tmean": 25.6
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2024,
+    "rain_mm": 1175,
+    "et0_mm": 747,
+    "tmean": 26.4
+  },
+  {
+    "site": "jiaxing_tongxiang",
+    "year": 2025,
+    "rain_mm": 1117,
+    "et0_mm": 766,
+    "tmean": 26.9
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2016,
+    "rain_mm": 1181,
+    "et0_mm": 635,
+    "tmean": 25.4
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2017,
+    "rain_mm": 1043,
+    "et0_mm": 683,
+    "tmean": 25.4
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2018,
+    "rain_mm": 658,
+    "et0_mm": 708,
+    "tmean": 25.5
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2019,
+    "rain_mm": 984,
+    "et0_mm": 687,
+    "tmean": 24.7
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2020,
+    "rain_mm": 1233,
+    "et0_mm": 626,
+    "tmean": 25.2
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2021,
+    "rain_mm": 1542,
+    "et0_mm": 653,
+    "tmean": 25.7
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2022,
+    "rain_mm": 648,
+    "et0_mm": 733,
+    "tmean": 25.7
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2023,
+    "rain_mm": 1057,
+    "et0_mm": 641,
+    "tmean": 25.7
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2024,
+    "rain_mm": 1141,
+    "et0_mm": 731,
+    "tmean": 26.6
+  },
+  {
+    "site": "hangzhou_yuhang",
+    "year": 2025,
+    "rain_mm": 1144,
+    "et0_mm": 748,
+    "tmean": 27.1
+  }
+]

@@ -1,0 +1,56 @@
+<Slide style={{ padding: 0, background: '#FFFFFF', fontFamily: '"Source Han Sans SC","Microsoft YaHei",Arial,sans-serif' }}>
+    <Box style={{ width: '100%', height: '100%', flexDirection: 'column', background: '#FFFFFF' }}>
+
+        <Box style={{ flex: 1, padding: '72px 100px 48px 100px', flexDirection: 'column' }}>
+
+            <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+                <Box style={{ width: 22, height: 22, background: '#1E4FA8' }} />
+                <Text style={{ fontSize: 15, color: '#4A5568', letterSpacing: 2 }}>农业工程 · 课程开题答辩</Text>
+            </Box>
+
+            <Box style={{ height: 96 }} />
+
+            <Box style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 28 }}>
+                <Box style={{ width: 6, height: 190, background: '#1E4FA8' }} />
+                <Box style={{ flexDirection: 'column', gap: 6 }}>
+                    <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#1A2230', lineHeight: 1.24 }}>
+                        AgriAgent-Bench
+                    </Text>
+                    <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#1E4FA8', lineHeight: 1.32 }}>
+                        面向种植决策的大模型智能体
+                    </Text>
+                    <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#1E4FA8', lineHeight: 1.32 }}>
+                        长程规划与纠偏能力评测基准
+                    </Text>
+                </Box>
+            </Box>
+
+            <Box style={{ height: 32 }} />
+
+            <Text style={{ fontSize: 18, color: '#8B97A8', letterSpacing: 0.5 }}>
+                A Benchmark for Long-horizon Planning and Recovery of Agricultural LLM Agents
+            </Text>
+
+            <Box style={{ flex: 1 }} />
+
+            <Box style={{ width: '100%', height: 1, background: '#D6DCE5' }} />
+            <Box style={{ height: 22 }} />
+
+            <Box style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <Box style={{ flexDirection: 'column', gap: 10 }}>
+                    <Text style={{ fontSize: 16, color: '#4A5568' }}>
+                        汇报人：____________　　指导教师：曾松伟　吴达胜
+                    </Text>
+                    <Text style={{ fontSize: 15, color: '#8B97A8' }}>
+                        浙江农林大学　·　2026 年 11 月
+                    </Text>
+                </Box>
+                <Text style={{ fontSize: 14, color: '#8B97A8', letterSpacing: 1 }}>01 / 15</Text>
+            </Box>
+
+        </Box>
+
+        <Box style={{ width: '100%', height: 10, background: '#1E4FA8' }} />
+
+    </Box>
+</Slide>
