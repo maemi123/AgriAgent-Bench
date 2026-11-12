@@ -189,7 +189,9 @@ python run_llm.py --workers 1
 ├── AgriAgent-Bench_开题报告.md      # 开题报告全文
 ├── AgriAgent-Bench_开题答辩/        # 答辩 PPT 与讲稿
 │   ├── pages.py                   # 15 页版式源码
-│   ├── pptx_engine.py             # 直写 OOXML 的渲染器
+│   ├── pptx_engine.py             # 直写 OOXML 的渲染器（含图片插入）
+│   ├── make_qr.py                 # 生成仓库二维码
+│   ├── assets/repo_qr.png         # 二维码（第 15 页使用）
 │   ├── 演讲稿.md                   # 10–12 分钟口语稿 + Q&A
 │   └── AgriAgent-Bench_开题答辩_终稿.pptx
 ├── requirements.txt

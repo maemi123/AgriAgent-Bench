@@ -655,9 +655,19 @@ def p15():
     s.rect(0, 0, 1280, 720, fill=C_WHITE)
     s.rect(0, 0, 1280, 10, fill=C_MAIN)
     s.rect(100, 274, 6, 76, fill=C_MAIN)
-    s.text(130, 268, 900, 60, "请各位老师批评指正", size=36, bold=True, color=C_TXT, lnspc=1.3)
-    s.text(130, 330, 900, 40, "AgriAgent-Bench　·　面向种植决策的大模型智能体长程规划与纠偏能力评测基准",
+    s.text(130, 268, 840, 60, "请各位老师批评指正", size=36, bold=True, color=C_TXT, lnspc=1.3)
+    s.text(130, 330, 840, 40, "AgriAgent-Bench　·　面向种植决策的大模型智能体长程规划与纠偏能力评测基准",
            size=14, color=C_TXT3)
+
+    # 仓库二维码
+    qr = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "repo_qr.png")
+    if os.path.exists(qr):
+        s.rect(972, 228, 196, 196, fill=C_WHITE, line=C_LINE, lw=1)
+        s.pic(982, 238, 176, 176, qr, name="repo_qr")
+        s.text(952, 434, 236, 22, "扫码查看项目仓库", size=13, color=C_TXT2, align="c")
+        s.text(932, 458, 276, 22, "github.com/maemi123/AgriAgent-Bench",
+               size=11, color=C_MAIN, align="c")
+
     s.rect(100, 500, 1080, 1, fill=C_LINE)
     s.text(100, 522, 900, 26, "汇报人：徐毅成　　指导教师：曾松伟　吴达胜", size=14, color=C_TXT2)
     s.text(100, 554, 900, 24, "浙江农林大学　·　2026 年 11 月", size=13, color=C_TXT3)

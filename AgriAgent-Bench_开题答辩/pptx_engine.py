@@ -30,6 +30,7 @@ class Slide:
     def __init__(self):
         self.items = []
         self._id = 2
+        self.images = []        # [(rId, 文件名, 本地路径), ...]
 
     def _nid(self):
         self._id += 1
@@ -85,6 +86,20 @@ class Slide:
             f'{body}</a:p></p:txBody></p:sp>'
         )
 
+    def pic(self, x, y, w, h, path, name=None):
+        """插入图片，按给定框等比铺满（不裁切）。"""
+        sid = self._nid()
+        rid = f"rId{10 + len(self.images)}"
+        fname = os.path.basename(path)
+        self.images.append((rid, fname, path))
+        self.items.append(
+            f'<p:pic><p:nvPicPr><p:cNvPr id="{sid}" name="{name or fname}"/>'
+            f'<p:cNvPicPr><a:picLocks noChangeAspect="1"/></p:cNvPicPr><p:nvPr/></p:nvPicPr>'
+            f'<p:blipFill><a:blip r:embed="{rid}"/><a:stretch><a:fillRect/></a:stretch></p:blipFill>'
+            f'<p:spPr><a:xfrm><a:off x="{e(x)}" y="{e(y)}"/><a:ext cx="{e(w)}" cy="{e(h)}"/></a:xfrm>'
+            f'<a:prstGeom prst="rect"><a:avLst/></a:prstGeom></p:spPr></p:pic>'
+        )
+
     def to_xml(self):
         return (
             '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
@@ -97,10 +112,16 @@ class Slide:
         )
 
 
-SLIDE_RELS = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
-              '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
-              '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout" '
-              'Target="../slideLayouts/slideLayout1.xml"/></Relationships>')
+def slide_rels(images=(), idx=1):
+    extra = "".join(
+        f'<Relationship Id="{rid}" Type="http://schemas.openxmlformats.org/officeDocument/2006/'
+        f'relationships/image" Target="../media/s{idx}_{fname}"/>'
+        for rid, fname, _ in images
+    )
+    return ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+            '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
+            '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout" '
+            'Target="../slideLayouts/slideLayout1.xml"/>' + extra + '</Relationships>')
 
 
 def build(template, out_path, slides):
@@ -114,7 +135,10 @@ def build(template, out_path, slides):
     n = len(slides)
     for i, s in enumerate(slides, start=1):
         data[f"ppt/slides/slide{i}.xml"] = s.to_xml().encode("utf-8")
-        data[f"ppt/slides/_rels/slide{i}.xml.rels"] = SLIDE_RELS.encode("utf-8")
+        data[f"ppt/slides/_rels/slide{i}.xml.rels"] = slide_rels(s.images, i).encode("utf-8")
+        for _, fname, path in s.images:
+            with open(path, "rb") as f:
+                data[f"ppt/media/s{i}_{fname}"] = f.read()
 
     # presentation.xml：插入 sldIdLst
     pres = data["ppt/presentation.xml"].decode("utf-8")
@@ -144,6 +168,9 @@ def build(template, out_path, slides):
         for i in range(1, n + 1)
     )
     ct = ct.replace("</Types>", add + "</Types>")
+    # 图片需要 png 的 Default 声明，模板默认只有 rels / xml
+    if 'ContentType="image/png"' not in ct:
+        ct = ct.replace("</Types>", '<Default Extension="png" ContentType="image/png"/></Types>')
     data["[Content_Types].xml"] = ct.encode("utf-8")
 
     order = [n for n in names if not n.endswith("/")]

@@ -1,11 +1,14 @@
 """把生成的 pptx 反向渲染成 HTML，用于视觉检查（不参与交付）。"""
 
+import base64
 import os
 import zipfile
 import xml.etree.ElementTree as ET
 
 A = '{http://schemas.openxmlformats.org/drawingml/2006/main}'
 P = '{http://schemas.openxmlformats.org/presentationml/2006/main}'
+R = '{http://schemas.openxmlformats.org/package/2006/relationships}'
+RID = '{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed'
 EMU = 9525.0
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -72,6 +75,30 @@ def parse_slide(z, idx):
         if paras:
             boxes.append(dict(kind='text', x=x, y=y, w=cx, h=cy,
                               paras=paras, anchor=anchor))
+
+    # 图片：解析 slide rels -> media
+    rels = {}
+    rel_path = f"ppt/slides/_rels/slide{idx}.xml.rels"
+    if rel_path in z.namelist():
+        for rel in ET.fromstring(z.read(rel_path)).iter(R + 'Relationship'):
+            rels[rel.get('Id')] = rel.get('Target')
+    for pic in root.iter(P + 'pic'):
+        off = pic.find('.//' + A + 'off')
+        ext = pic.find('.//' + A + 'ext')
+        blip = pic.find('.//' + A + 'blip')
+        if off is None or blip is None:
+            continue
+        target = rels.get(blip.get(RID))
+        if not target:
+            continue
+        media = 'ppt/' + target.replace('../', '')
+        if media not in z.namelist():
+            continue
+        b64 = base64.b64encode(z.read(media)).decode('ascii')
+        boxes.append(dict(kind='img',
+                          x=int(off.get('x')) / EMU, y=int(off.get('y')) / EMU,
+                          w=int(ext.get('cx')) / EMU, h=int(ext.get('cy')) / EMU,
+                          src='data:image/png;base64,' + b64))
     return boxes
 
 
@@ -82,7 +109,11 @@ CSS_ANCHOR = {'t': 'flex-start', 'ctr': 'center', 'b': 'flex-end'}
 def boxes_to_html(boxes):
     out = []
     for b in boxes:
-        if b['kind'] == 'rect':
+        if b['kind'] == 'img':
+            style = (f"position:absolute;left:{b['x']:.1f}px;top:{b['y']:.1f}px;"
+                     f"width:{b['w']:.1f}px;height:{b['h']:.1f}px;")
+            out.append(f'<img src="{b["src"]}" style="{style}">')
+        elif b['kind'] == 'rect':
             style = (f"position:absolute;left:{b['x']:.1f}px;top:{b['y']:.1f}px;"
                      f"width:{b['w']:.1f}px;height:{b['h']:.1f}px;")
             if b['fill']:
